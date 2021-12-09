@@ -1,11 +1,11 @@
 from tile import Tile, Suits, Values
+from hand import Hand
 
 
 def main():
-    t1 = Tile(Suits.PIN, Values.ONE, True)
-    print(t1.suit)
-    print(t1.value)
-    print(t1.red)
+    myHand = Hand()
+    for handTile in myHand.generate_hand():
+        print("{} of {}".format(handTile.value, handTile.suit))
 
 if __name__ == "__main__":
     main()
