@@ -8,6 +8,8 @@ def clear():
 
 def main():
     myGame = Game()
+    myGame.generate_walls()
+    myGame.print_walls()
 
 
 if __name__ == "__main__":

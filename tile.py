@@ -34,3 +34,6 @@ class Tile:
         self.suit = suit
         self.value = value
         self.red = red
+    
+    def __str__(self):
+        return "{} of {}".format(self.value.name, self.suit.name)
