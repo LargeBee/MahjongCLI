@@ -6,17 +6,17 @@ class Hand:
         self.tiles = tiles
 
     def print(self):
-        print("Hand:")
+        print("\nHand {0}:".format(self.seat_wind))
         for tile in self.tiles:
             print(tile)
 
     def remove_tile(self, tile):
         self.tiles.remove(tile)
-        self.sort_hand()
+        #self.sort_hand()
     
     def add_tile(self, tile):
-        self.tiles.append(tile)
-        self.sort_hand()
+        self.tiles += tile
+        #self.sort_hand()
 
-    def sort_hand(self):
-        pass
+    #def sort_hand(self):
+    #    pass

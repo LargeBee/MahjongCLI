@@ -22,8 +22,11 @@ class Game:
         for tile in self.dead_wall:
             print(tile)
 
-    def draw_from_wall(self):
-        return self.live_wall.pop(0)
+    def draw_from_live_wall(self, n=1):
+        tiles = []
+        for i in range(n):
+            tiles.append(self.live_wall.pop(0))
+        return tiles
 
     def generate_walls(self):
         tiles = []
@@ -41,5 +44,17 @@ class Game:
         random.shuffle(tiles)
         self.live_wall = tiles[:-14]
         self.dead_wall = tiles[-14:]
+
+    def init_hands(self):
+        for i in range(3):
+            for k, hand in self.hands.items():
+                hand.add_tile(self.draw_from_live_wall(4))
+        for k in self.hands.keys():
+                hand.add_tile(self.draw_from_live_wall())
+
+    def print_hands(self):
+        for k in self.hands.keys():
+            self.hands[k].print()
+
         
 
