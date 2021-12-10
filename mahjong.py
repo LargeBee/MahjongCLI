@@ -1,15 +1,14 @@
 import os
 from tile import Tile, Suits, Values
 from hand import Hand
+from game import Game
 
 def clear():
     os.system('cls||clear')
 
 def main():
-    myHand = Hand()
-    clear()
-    for handTile in myHand.generate_random_hand():
-        print("{} of {}".format(handTile.value, handTile.suit))
+    myGame = Game()
+
 
 if __name__ == "__main__":
     main()
