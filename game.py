@@ -1,4 +1,5 @@
 from tile import *
+import random
 
 class Game:
     def __init__(self):
@@ -6,13 +7,16 @@ class Game:
         self.dead_wall = []
         self.round_wind = Winds.EAST
     
-    def print_walls(self):
+    def print(self):
         print("Live Wall:")
         for tile in self.live_wall:
             print(tile)
         print("Dead Wall:")
         for tile in self.dead_wall:
             print(tile)
+
+    def draw_from_wall(self):
+        return self.live_wall.pop(0)
 
     def generate_walls(self):
         tiles = []
@@ -27,6 +31,7 @@ class Game:
                 case Suits.DRAGON:
                     for d in Dragons:
                         tiles += [Tile(suit, d)] * 4
+        random.shuffle(tiles)
         self.live_wall = tiles[:-14]
         self.dead_wall = tiles[-14:]
         
