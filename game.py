@@ -1,11 +1,18 @@
-from tile import *
 import random
+from tile import *
+from hand import Hand
 
 class Game:
     def __init__(self):
         self.live_wall = []
         self.dead_wall = []
         self.round_wind = Winds.EAST
+        self.hands = {
+            Winds.EAST: Hand(Winds.EAST),
+            Winds.SOUTH: Hand(Winds.SOUTH),
+            Winds.WEST: Hand(Winds.WEST),
+            Winds.NORTH: Hand(Winds.NORTH)
+        }
     
     def print(self):
         print("Live Wall:")

@@ -1,8 +1,8 @@
-import random
 from tile import *
 
 class Hand:
-    def __init__(self, tiles=[]):
+    def __init__(self, seat_wind=Winds.EAST, tiles=[]):
+        self.seat_wind = seat_wind
         self.tiles = tiles
 
     def print(self):
