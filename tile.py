@@ -17,13 +17,17 @@ class Values(Enum):
     SEVEN = 7
     EIGHT = 8
     NINE = 9
-    EAST = 10
-    SOUTH = 11
-    WEST = 12
-    NORTH = 13
-    RED_DRAGON = 14
-    GREEN_DRAGON = 15
-    WHITE_DRAGON = 16
+
+class Winds(Enum):
+    EAST = 1
+    SOUTH = 2
+    WEST = 3
+    NORTH = 4
+
+class Dragons(Enum):
+    RED_DRAGON = 1
+    GREEN_DRAGON = 2
+    WHITE_DRAGON = 3
 
 class Tile:
     def __init__(self, suit, value, red=False):

@@ -8,7 +8,7 @@ def clear():
 def main():
     myHand = Hand()
     clear()
-    for handTile in myHand.generate_hand():
+    for handTile in myHand.generate_random_hand():
         print("{} of {}".format(handTile.value, handTile.suit))
 
 if __name__ == "__main__":
