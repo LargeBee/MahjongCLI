@@ -5,10 +5,8 @@ class Hand:
         self.seat_wind = seat_wind
         self.tiles = tiles
 
-    def print(self):
-        print("\nHand {0}:".format(self.seat_wind))
-        for tile in self.tiles:
-            print(tile)
+    def __str__(self):
+        return "\nHand {}:\n{}".format(self.seat_wind.name, '\n'.join([str(x) for x in self.tiles]))
 
     def remove_tile(self, tile):
         self.tiles.remove(tile)

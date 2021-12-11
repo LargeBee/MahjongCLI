@@ -19,10 +19,10 @@ class Values(Enum):
     NINE = 9
 
 class Winds(Enum):
-    EAST = 1
-    SOUTH = 2
-    WEST = 3
-    NORTH = 4
+    EAST = 0
+    SOUTH = 1
+    WEST = 2
+    NORTH = 3
 
 class Dragons(Enum):
     RED_DRAGON = 1

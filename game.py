@@ -7,20 +7,22 @@ class Game:
         self.live_wall = []
         self.dead_wall = []
         self.round_wind = Winds.EAST
-        self.hands = {
-            Winds.EAST: Hand(Winds.EAST),
-            Winds.SOUTH: Hand(Winds.SOUTH),
-            Winds.WEST: Hand(Winds.WEST),
-            Winds.NORTH: Hand(Winds.NORTH)
-        }
-    
-    def print(self):
-        print("Live Wall:")
-        for tile in self.live_wall:
-            print(tile)
-        print("Dead Wall:")
-        for tile in self.dead_wall:
-            print(tile)
+        self.hands = [
+            Hand(Winds.EAST, []),
+            Hand(Winds.SOUTH, []),
+            Hand(Winds.WEST, []),
+            Hand(Winds.NORTH, [])
+        ]
+
+    def __str__(self):
+        return "Live Wall:\n{}\n\nDead Wall:\n{}"\
+            .format(\
+            '\n'.join([str(x) for x in self.live_wall]),\
+            '\n'.join([str(x) for x in self.dead_wall]))
+
+    def print_hands(self):
+        for hand in self.hands:
+            print(hand)
 
     def draw_from_live_wall(self, n=1):
         tiles = []
@@ -47,14 +49,10 @@ class Game:
 
     def init_hands(self):
         for i in range(3):
-            for k, hand in self.hands.items():
+            for hand in self.hands:
                 hand.add_tile(self.draw_from_live_wall(4))
-        for k in self.hands.keys():
+        for hand in self.hands:
                 hand.add_tile(self.draw_from_live_wall())
-
-    def print_hands(self):
-        for k in self.hands.keys():
-            self.hands[k].print()
 
         
 

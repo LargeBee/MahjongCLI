@@ -9,20 +9,9 @@ def main():
     clear()
     my_game = Game()
     my_game.generate_walls()
-    print("\n")
-    #my_game.print()
-    print("\n")
-
-    my_game.hands[Winds.EAST].print()
-    my_game.hands[Winds.SOUTH].print()
-
-    my_game.hands[Winds.EAST].add_tile([Tile(Suits.BAMBOO, Values.EIGHT)])
-    
-    my_game.hands[Winds.EAST].print()
-    my_game.hands[Winds.SOUTH].print()
-    #my_game.init_hands()
-    print("\n")
-    #my_game.print_hands()
+    print(my_game)
+    my_game.init_hands()
+    my_game.print_hands()
 
 
 if __name__ == "__main__":
