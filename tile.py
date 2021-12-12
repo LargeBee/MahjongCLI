@@ -25,9 +25,9 @@ class Winds(Enum):
     NORTH = 3
 
 class Dragons(Enum):
-    RED_DRAGON = 1
-    GREEN_DRAGON = 2
-    WHITE_DRAGON = 3
+    RED_DRAGON = 0
+    GREEN_DRAGON = 1
+    WHITE_DRAGON = 2
 
 class Tile:
     def __init__(self, suit, value, red=False):

@@ -6,7 +6,7 @@ class Hand:
         self.tiles = tiles
 
     def __str__(self):
-        return "\nHand {}:\n{}".format(self.seat_wind.name, '\n'.join([str(x) for x in self.tiles]))
+        return "\n{} Hand:\n{}".format(self.seat_wind.name.title(), '\n'.join([str(x) for x in self.tiles]))
 
     def remove_tile(self, tile):
         self.tiles.remove(tile)

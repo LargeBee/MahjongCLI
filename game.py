@@ -15,14 +15,11 @@ class Game:
         ]
 
     def __str__(self):
-        return "Live Wall:\n{}\n\nDead Wall:\n{}"\
+        return "Live Wall:\n{}\n\nDead Wall:\n{}\n\nHands:{}"\
             .format(\
             '\n'.join([str(x) for x in self.live_wall]),\
-            '\n'.join([str(x) for x in self.dead_wall]))
-
-    def print_hands(self):
-        for hand in self.hands:
-            print(hand)
+            '\n'.join([str(x) for x in self.dead_wall]),\
+            '\n'.join([str(x) for x in self.hands]))
 
     def draw_from_live_wall(self, n=1):
         tiles = []

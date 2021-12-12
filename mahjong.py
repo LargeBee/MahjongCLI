@@ -9,10 +9,8 @@ def main():
     clear()
     my_game = Game()
     my_game.generate_walls()
-    print(my_game)
     my_game.init_hands()
-    my_game.print_hands()
-
+    print(my_game)
 
 if __name__ == "__main__":
     main()
