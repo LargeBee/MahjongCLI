@@ -1,11 +1,16 @@
-from tile import Tile, Suits, Values
-from hand import Hand
+import os
+from game import Game
+from tile import *
 
+def clear():
+    os.system('cls||clear')
 
 def main():
-    myHand = Hand()
-    for handTile in myHand.generate_hand():
-        print("{} of {}".format(handTile.value, handTile.suit))
+    clear()
+    my_game = Game()
+    my_game.generate_walls()
+    my_game.init_hands()
+    print(my_game)
 
 if __name__ == "__main__":
     main()
